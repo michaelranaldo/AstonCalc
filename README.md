@@ -3,6 +3,7 @@
 So the aim of this project is to:
 
 a) Demonstrate what not to do (I can do the wrong thing just fine thank you very much)
+
 b) Demonstrate what one could do to do it correctly (eh, doing the absolutely right thing is impossible anyway)
 
 ## Building
