@@ -1,4 +1,4 @@
-package uk.co.ranaldo.calc;
+package uk.co.ranaldo.calc.basic;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
@@ -29,7 +29,7 @@ public class CalcView extends JFrame {
     /**
      * Constructor, you're getting good at this.
      */
-    CalcView(CalcModel model) {
+    public CalcView(CalcModel model) {
         // Set up the logic
         this.m_model = model;
         
@@ -51,24 +51,24 @@ public class CalcView extends JFrame {
         this.setContentPane(content);
         this.pack();
         
-        this.setTitle("Simple Calc - MVC");
+        this.setTitle("Simple Calc - MVC - Basic");
         // The window closing event should probably be passed to the Controller were this a real program. But it isn't.
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    void reset() {
+    public void reset() {
         m_totalTf.setText(m_model.getValue());
     }
     
-    String getUserInput() {
+    public String getUserInput() {
         return m_userInputTf.getText();
     }
     
-    void setTotal(String newTotal) {
+    public void setTotal(String newTotal) {
         m_totalTf.setText(newTotal);
     }
     
-    void showError(String errMessage) {
+    public void showError(String errMessage) {
         JOptionPane.showMessageDialog(this, errMessage);
     }
     

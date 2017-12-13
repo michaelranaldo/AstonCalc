@@ -1,7 +1,4 @@
-package uk.co.ranaldo.calc;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+package uk.co.ranaldo.calc.observer;
 
 /**
  * structure/calc-mvc/CalcController.java - Controller Handles user interaction with listeners; calls View and Model as
@@ -11,18 +8,24 @@ import java.awt.event.ActionListener;
  * @author S H S Wong - 26-02-2011
  * @author Michael Ranaldo <michael@ranaldo.co.uk>
  */
-public class CalcController {
+public class CalcObservedController {
 
     // The Controller needs to interact with both Model and View.
-    private final CalcModel m_model;
-    private final CalcView m_view;
+    private final CalcObservedModel m_model;
+    private final CalcObservedView m_view;
 
     /**
      * Constructor!
+     * @param model
+     * @param view
      */
-    CalcController(CalcModel model, CalcView view) {
+    public CalcObservedController(CalcObservedModel model, CalcObservedView view) {
         this.m_model = model;
         this.m_view = view;
+        
+        // So after twenty minutes, turns out it doesn't add observers automatically.
+        // Who knew? The javadoc. Should go straight there next time.
+        model.addObserver(view);
 
         // Add listeners to the view
         view.addMultiplyListener(e -> {

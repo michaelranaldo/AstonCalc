@@ -1,4 +1,4 @@
-package uk.co.ranaldo.calc;
+package uk.co.ranaldo.calc.basic;
 
 import java.math.BigInteger;
 
@@ -23,7 +23,7 @@ public class CalcModel {
     /**
      * Constructor, but you know that.
      */
-    CalcModel() {
+    public CalcModel() {
         reset();
     }
     
